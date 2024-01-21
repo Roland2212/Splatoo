@@ -1,0 +1,9 @@
+# CLIENT 
+/client/node_modules
+/client/.vscode
+/client/.angular
+
+# MOCK-SERVER
+
+/mock-server/node_modules
+/mock-server/environment
