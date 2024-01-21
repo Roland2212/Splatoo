@@ -1,0 +1,2 @@
+# Splatoo
+Sprint planning tool
