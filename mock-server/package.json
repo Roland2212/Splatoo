@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "start-dev": "nodemon --env-file=.development.env index.js"
   },
   "author": "MAD_Roland",
   "license": "ISC",

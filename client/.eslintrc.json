@@ -1,0 +1,109 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.js", "*.ts"],
+      "parserOptions": {
+        "project": ["**/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/unbound-method": ["error", { "ignoreStatic": true }],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "valid-typeof": "error",
+        "arrow-body-style": ["error", "always"],
+        "complexity": ["error", 3],
+        "max-depth": ["error", 3],
+        "max-nested-callbacks": ["error", 3],
+        "max-params": ["error", 1],
+        "curly": "error",
+        "eqeqeq": "error",
+        "multiline-comment-style": "error",
+        "no-inline-comments": "error",
+        "line-comment-position": "error",
+        "no-array-constructor": "error",
+        "no-console": "error",
+        "no-else-return": "error",
+        "no-empty": "error",
+        "no-empty-function": ["error", { "allow": ["constructors"] }],
+        "no-extra-boolean-cast": "error",
+        "no-extra-semi": "error",
+        "no-floating-decimal": "error",
+        "no-nested-ternary": "error",
+        "no-unneeded-ternary": "error",
+        "multiline-ternary": ["error", "always-multiline"],
+        "no-new-object": "error",
+        "no-new-wrappers": "error",
+        "no-throw-literal": "error",
+        "no-undef-init": "error",
+        "no-undefined": "error",
+        "no-useless-rename": "error",
+        "no-useless-return": "error",
+        "prefer-template": "error",
+        "array-bracket-newline": ["error", { "multiline": true }],
+        "array-element-newline": ["error", "consistent"],
+        "array-bracket-spacing": ["error", "never", { "objectsInArrays": false }],
+        "arrow-parens": ["error", "as-needed"],
+        "arrow-spacing": "error",
+        "block-spacing": "error",
+        "brace-style": "error",
+        "comma-dangle": ["error", "always-multiline"],
+        "comma-spacing": "error",
+        "computed-property-spacing": "error",
+        "function-call-argument-newline": ["error", "consistent"],
+        "linebreak-style": ["error", "unix"],
+        "lines-around-comment": ["error", { "beforeBlockComment": true, "afterBlockComment": false }],
+        "max-len": [
+          "error",
+          {
+            "code": 120,
+            "tabWidth": 4,
+            "ignoreUrls": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true
+          }
+        ],
+        "no-mixed-spaces-and-tabs": "error",
+        "no-multi-spaces": "error",
+        "no-multiple-empty-lines": "error",
+        "no-tabs": "error",
+        "wrap-iife": "error",
+        "rest-spread-spacing": "error",
+        "semi": "error",
+        "semi-spacing": "error",
+        "space-before-blocks": "error",
+        "space-before-function-paren": ["error", "never"],
+        "switch-colon-spacing": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:prettier/recommended"],
+      "rules": {}
+    }
+  ]
+}

@@ -6,4 +6,4 @@
 # MOCK-SERVER
 
 /mock-server/node_modules
-/mock-server/environment
+/mock-server/environments
