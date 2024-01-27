@@ -1,0 +1,6 @@
+@use 'mixin';
+
+.view {
+    @include mixin.flex-column();
+    @include mixin.full-height-width();
+}

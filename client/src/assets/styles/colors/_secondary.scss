@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+@use 'variable';
+
+$secondary-map: (
+    50: #e9f5ff,
+    100: #c7e5ff,
+    200: #a2d4ff,
+    300: #7dc2ff,
+    400: #61b5ff,
+    500: #45a8ff,
+    600: #3ea0ff,
+    700: #3697ff,
+    800: #2e8dff,
+    900: #1f7dff,
+    contrast: (
+        50: variable.$text-color,
+        100: variable.$text-color,
+        200: variable.$text-color,
+        300: variable.$text-color,
+        400: variable.$text-color,
+        500: variable.$white-color,
+        600: variable.$white-color,
+        700: variable.$white-color,
+        800: variable.$white-color,
+        900: variable.$white-color,
+    ),
+);
+
+$secondary-palette: mat.define-palette($secondary-map, 500);
+
+$secondary-color-500: map-get(
+    $map: $secondary-map,
+    $key: 500,
+);

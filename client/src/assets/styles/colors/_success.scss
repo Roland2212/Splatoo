@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+@use 'variable';
+
+$success-map: (
+    50: #e9f9f0,
+    100: #c7efda,
+    200: #a2e5c2,
+    300: #7ddbaa,
+    400: #61d397,
+    500: #45cb85,
+    600: #3ec67d,
+    700: #36be72,
+    800: #2eb868,
+    900: #1fac55,
+    contrast: (
+        50: variable.$text-color,
+        100: variable.$text-color,
+        200: variable.$text-color,
+        300: variable.$text-color,
+        400: variable.$text-color,
+        500: variable.$white-color,
+        600: variable.$white-color,
+        700: variable.$white-color,
+        800: variable.$white-color,
+        900: variable.$white-color,
+    ),
+);
+
+$success-palette: mat.define-palette($success-map, 500);
+
+$success-color-500: map-get(
+    $map: $success-map,
+    $key: 500,
+);

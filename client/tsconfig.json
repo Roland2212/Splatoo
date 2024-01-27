@@ -6,7 +6,8 @@
     "outDir": "./dist/out-tsc",
     "paths": {
       "@auth/*": ["src/app/auth/*"],
-      "@core/*": ["src/app/core/*"]
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,

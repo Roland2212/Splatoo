@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+
+@use 'themes/light' as theme;
+@use 'colors/primary';
+@use 'colors/accent';
+@use 'colors/warn';
+@use 'typography';
+
+@include mat.core();
+
+@include theme.apply-light-theme(
+    primary.$primary-palette,
+    accent.$accent-palette,
+    warn.$warn-palette,
+    typography.$typography-config
+);

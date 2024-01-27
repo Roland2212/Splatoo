@@ -1,0 +1,11 @@
+@use 'variable';
+@use 'mixin';
+@use 'colors/accent';
+@use 'colors/primary';
+
+.auth-container {
+    @include mixin.flex-center();
+
+    background: accent.$accent-color-500;
+    background: linear-gradient(135deg, accent.$accent-color-500 0%, primary.$primary-color-500 100%);
+}

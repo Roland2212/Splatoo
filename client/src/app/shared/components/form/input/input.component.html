@@ -1,0 +1,32 @@
+<mat-form-field
+    [appearance]="appearance"
+    [class]="classes">
+    <mat-label>{{ label }}</mat-label>
+    @if (prefixIcon) {
+        <mat-icon matPrefix>{{ prefixIcon }}</mat-icon>
+    }
+    <input
+        matInput
+        [placeholder]="placeholder"
+        [formControl]="control" />
+    <mat-hint align="end">{{ hint }}</mat-hint>
+    @if (suffixIcon) {
+        <mat-icon matSuffix>{{ suffixIcon }}</mat-icon>
+    }
+    <!-- ERRORS -->
+    @if (control.hasError('required')) {
+        <mat-error align="end"> Field is required </mat-error>
+    } @else if (control.hasError('email')) {
+        <mat-error align="end"> Invalid email format </mat-error>
+    } @else if (control.hasError('minlength')) {
+        <mat-error align="end">
+            Min value required: {{ control.errors?.['minlength'].requiredLength }}, actual value:
+            {{ control.errors?.['minlength'].actualLength }}
+        </mat-error>
+    } @else if (control.hasError('maxlength')) {
+        <mat-error align="end">
+            Max value required: {{ control.errors?.['maxlength'].requiredLength }}, actual value:
+            {{ control.errors?.['maxlength'].actualLength }}
+        </mat-error>
+    }
+</mat-form-field>

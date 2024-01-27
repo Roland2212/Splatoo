@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+@use 'variable';
+
+$accent-map: (
+    50: #eeeefc,
+    100: #d4d4f8,
+    200: #b8b8f4,
+    300: #9b9cef,
+    400: #8586eb,
+    500: #7071e8,
+    600: #6869e5,
+    700: #5d5ee2,
+    800: #5354de,
+    900: #4142d8,
+    contrast: (
+        50: variable.$text-color,
+        100: variable.$text-color,
+        200: variable.$text-color,
+        300: variable.$text-color,
+        400: variable.$text-color,
+        500: variable.$white-color,
+        600: variable.$white-color,
+        700: variable.$white-color,
+        800: variable.$white-color,
+        900: variable.$white-color,
+    ),
+);
+
+$accent-palette: mat.define-palette($accent-map, 500);
+
+$accent-color-500: map-get(
+    $map: $accent-map,
+    $key: 500,
+);

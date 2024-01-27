@@ -1,0 +1,29 @@
+<div class="sign-in-container">
+    <mat-card class>
+        <mat-card-header>
+            <h1>Splatoo</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <form
+                [formGroup]="form"
+                class="form">
+                <app-shared-input
+                    [control]="emailControl"
+                    label="Email"
+                    prefixIcon="mail">
+                </app-shared-input>
+                <app-shared-input
+                    [control]="passwordControl"
+                    label="Password"
+                    prefixIcon="vpn_key">
+                </app-shared-input>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button>
+                <mat-icon>login</mat-icon>
+                Sign In
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

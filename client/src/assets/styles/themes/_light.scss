@@ -1,0 +1,64 @@
+@use '@angular/material' as mat;
+
+@mixin apply-light-theme($primary-palette: null, $accent-palette: null, $warn-palette: null, $typography-config: null) {
+    $light-theme-s: mat.define-light-theme(
+        (
+            color: (
+                primary: $primary-palette,
+                accent: $accent-palette,
+                warn: $warn-palette,
+            ),
+            typography: $typography-config,
+            density: -5,
+        )
+    );
+
+    $light-theme-m: mat.define-light-theme(
+        (
+            color: (
+                primary: $primary-palette,
+                accent: $accent-palette,
+                warn: $warn-palette,
+            ),
+            typography: $typography-config,
+            density: 0,
+        )
+    );
+
+    @include mat.core-theme($light-theme-s);
+    // @include mat.autocomplete-theme($light-theme);
+    // @include mat.badge-theme($light-theme);
+    // @include mat.bottom-sheet-theme($light-theme);
+    @include mat.button-theme($light-theme-m);
+    // @include mat.button-toggle-theme($light-theme);
+    @include mat.card-theme($light-theme-s);
+    // @include mat.checkbox-theme($light-theme);
+    // @include mat.chips-theme($light-theme);
+    // @include mat.table-theme($light-theme);
+    // @include mat.datepicker-theme($light-theme);
+    // @include mat.dialog-theme($light-theme);
+    // @include mat.divider-theme($light-theme);
+    // @include mat.expansion-theme($light-theme);
+    @include mat.form-field-theme($light-theme-s);
+    // @include mat.grid-list-theme($light-theme);
+    @include mat.icon-theme($light-theme-s);
+    @include mat.input-theme($light-theme-s);
+    // @include mat.list-theme($light-theme);
+    // @include mat.menu-theme($light-theme);
+    // @include mat.paginator-theme($light-theme);
+    // @include mat.progress-bar-theme($light-theme);
+    // @include mat.progress-spinner-theme($light-theme);
+    // @include mat.radio-theme($light-theme);
+    // @include mat.select-theme($light-theme);
+    // @include mat.sidenav-theme($light-theme);
+    // @include mat.slide-toggle-theme($light-theme);
+    // @include mat.slider-theme($light-theme);
+    // @include mat.stepper-theme($light-theme);
+    // @include mat.sort-theme($light-theme);
+    // @include mat.tabs-theme($light-theme);
+    // @include mat.toolbar-theme($light-theme);
+    // @include mat.tooltip-theme($light-theme);
+    // @include mat.tree-theme($light-theme);
+    // @include mat.snack-bar-theme($light-theme);
+    // @include mat.all-component-themes($light-theme);
+}

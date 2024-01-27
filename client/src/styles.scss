@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'reset';
+@use 'variable';
+@use 'font';
+@use 'mixin';
+
+@use 'core/view';
+@use 'core/form';
+
+body {
+    background: variable.$base-color;
+    color: variable.$text-color;
+    font-size: variable.$font-size-medium;
+}
+
+.app-container {
+    @include mixin.full-height-width();
+}

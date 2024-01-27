@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+@use 'variable';
+
+$error-map: (
+    50: #ffeae8,
+    100: #fecac5,
+    200: #fda69e,
+    300: #fc8277,
+    400: #fc685a,
+    500: #fb4d3d,
+    600: #fa4637,
+    700: #fa3d2f,
+    800: #f93427,
+    900: #f8251a,
+    contrast: (
+        50: variable.$text-color,
+        100: variable.$text-colo,
+        200: variable.$text-color,
+        300: variable.$text-color,
+        400: variable.$text-color,
+        500: variable.$white-color,
+        600: variable.$white-color,
+        700: variable.$white-color,
+        800: variable.$white-color,
+        900: variable.$white-color,
+    ),
+);
+
+$error-palette: mat.define-palette($error-map, 500);
+
+$error-color-500: map-get(
+    $map: $error-map,
+    $key: 500,
+);
