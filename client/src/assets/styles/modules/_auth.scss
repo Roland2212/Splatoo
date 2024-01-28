@@ -6,10 +6,13 @@
 .sign-up-container {
     width: 300px;
 
-    .sign-header {
+    .app-name {
         color: variable.$white-color;
         font-size: variable.$font-size-large;
-        margin-bottom: 1em;
+
+        h1 {
+            font-style: italic;
+        }
     }
 
     mat-card {

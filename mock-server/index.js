@@ -9,7 +9,7 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.use("/user", userRoutes);
+app.use("/api/user", userRoutes);
 
 console.log(process.env.SERVER_PORT);
 

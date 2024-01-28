@@ -1,4 +1,27 @@
 {
-  "AUTH": {},
-  "test": "Test"
+  "COMMON": {
+    "text": {
+      "name": {
+        "first": "First name",
+        "last": "Last name"
+      },
+      "email": "Email",
+      "password": {
+        "default": "Password",
+        "confirm": "Confirm password"
+      }
+    }
+  },
+  "AUTH": {
+    "text": {
+      "sign": {
+        "in": "Sign in",
+        "up": "Sign up"
+      },
+      "link": {
+        "in": "Already have an account?",
+        "up": "Do not have an account?"
+      }
+    }
+  }
 }

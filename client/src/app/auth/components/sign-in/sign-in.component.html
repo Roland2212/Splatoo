@@ -1,10 +1,10 @@
 <div class="sign-in-container">
-    <div class="sign-header">
-        <span>Sign in</span>
+    <div class="app-name">
+        <h1>Splatoo</h1>
     </div>
     <mat-card>
         <mat-card-header>
-            <h1>Splatoo</h1>
+            <h3>{{ 'AUTH.text.sign.in' | translate }}</h3>
         </mat-card-header>
         <mat-card-content>
             <form
@@ -13,13 +13,13 @@
                 <app-shared-input
                     classes="field"
                     [control]="emailControl"
-                    label="Email"
+                    [label]="'COMMON.text.email' | translate"
                     prefixIcon="mail">
                 </app-shared-input>
                 <app-shared-input
                     classes="field"
                     [control]="passwordControl"
-                    label="Password"
+                    [label]="'COMMON.text.password.default' | translate"
                     type="password"
                     prefixIcon="vpn_key">
                 </app-shared-input>
@@ -30,11 +30,15 @@
                 mat-button
                 (click)="onSignIn()">
                 <mat-icon>login</mat-icon>
-                Sign in
+                {{ 'AUTH.text.sign.in' | translate }}
             </button>
         </mat-card-actions>
     </mat-card>
     <div class="change-form-link">
-        <a (click)="onSwitchToRegisterForm()">Do not have an account?</a>
+        <a
+            matRipple
+            (click)="onSwitchToRegisterForm()">
+            {{ 'AUTH.text.link.up' | translate }}
+        </a>
     </div>
 </div>
