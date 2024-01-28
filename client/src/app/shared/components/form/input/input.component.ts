@@ -13,6 +13,7 @@ export class SharedInputComponent implements OnInit {
     @Input() label: string = 'Input';
     @Input() appearance: MatFormFieldAppearance = 'outline';
     @Input() placeholder: string = '';
+    @Input() type: string = 'text';
     @Input() classes: string = '';
     @Input() validators: ValidatorFn[] = [];
     @Input() hint: string = '';

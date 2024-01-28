@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-sign-in',
@@ -7,11 +7,21 @@ import { FormControl, FormGroup } from '@angular/forms';
     styleUrl: './sign-in.component.scss',
 })
 export class SignInComponent {
-    emailControl = new FormControl('');
-    passwordControl = new FormControl('');
+    @Output() isRegisterFormEvent$ = new EventEmitter();
+
+    emailControl = new FormControl('', [Validators.required, Validators.email]);
+    passwordControl = new FormControl('', [Validators.required]);
 
     form = new FormGroup({
         email: this.emailControl,
         password: this.passwordControl,
     });
+
+    onSwitchToRegisterForm(): void {
+        this.isRegisterFormEvent$.emit(true);
+    }
+
+    onSignIn(): void {
+        console.log('onSignIn');
+    }
 }

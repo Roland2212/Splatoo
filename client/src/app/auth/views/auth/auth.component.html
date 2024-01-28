@@ -1,7 +1,7 @@
 <div class="auth-container view">
     @if (!isRegisterForm) {
-        <app-sign-in></app-sign-in>
+        <app-sign-in (isRegisterFormEvent$)="onSwitchForm($event)"> </app-sign-in>
     } @else {
-        <app-sign-up></app-sign-up>
+        <app-sign-up (isRegisterFormEvent$)="onSwitchForm($event)"> </app-sign-up>
     }
 </div>

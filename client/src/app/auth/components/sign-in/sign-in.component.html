@@ -1,5 +1,8 @@
 <div class="sign-in-container">
-    <mat-card class>
+    <div class="sign-header">
+        <span>Sign in</span>
+    </div>
+    <mat-card>
         <mat-card-header>
             <h1>Splatoo</h1>
         </mat-card-header>
@@ -8,22 +11,30 @@
                 [formGroup]="form"
                 class="form">
                 <app-shared-input
+                    classes="field"
                     [control]="emailControl"
                     label="Email"
                     prefixIcon="mail">
                 </app-shared-input>
                 <app-shared-input
+                    classes="field"
                     [control]="passwordControl"
                     label="Password"
+                    type="password"
                     prefixIcon="vpn_key">
                 </app-shared-input>
             </form>
         </mat-card-content>
         <mat-card-actions align="end">
-            <button mat-button>
+            <button
+                mat-button
+                (click)="onSignIn()">
                 <mat-icon>login</mat-icon>
-                Sign In
+                Sign in
             </button>
         </mat-card-actions>
     </mat-card>
+    <div class="change-form-link">
+        <a (click)="onSwitchToRegisterForm()">Do not have an account?</a>
+    </div>
 </div>

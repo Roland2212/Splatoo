@@ -1,5 +1,59 @@
 <div class="sign-up-container">
+    <div class="sign-header">
+        <span>Sign up</span>
+    </div>
     <mat-card>
-        <mat-card-content>Sign Up</mat-card-content>
+        <mat-card-header>
+            <h1>Splatoo</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <form
+                [formGroup]="form"
+                class="form">
+                <app-shared-input
+                    classes="field"
+                    [control]="firstNameControl"
+                    label="First name"
+                    prefixIcon="badge">
+                </app-shared-input>
+                <app-shared-input
+                    classes="field"
+                    [control]="lastNameControl"
+                    label="Last name"
+                    prefixIcon="badge">
+                </app-shared-input>
+                <app-shared-input
+                    classes="field"
+                    [control]="emailControl"
+                    label="Email"
+                    prefixIcon="mail">
+                </app-shared-input>
+                <app-shared-input
+                    classes="field"
+                    [control]="passwordControl"
+                    label="Password"
+                    type="password"
+                    prefixIcon="vpn_key">
+                </app-shared-input>
+                <app-shared-input
+                    classes="field"
+                    [control]="confirmPasswordControl"
+                    label="Confirm password"
+                    type="password"
+                    prefixIcon="vpn_key">
+                </app-shared-input>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button
+                mat-button
+                (click)="onSignUp()">
+                <mat-icon>login</mat-icon>
+                Sign up
+            </button>
+        </mat-card-actions>
     </mat-card>
+    <div class="change-form-link">
+        <a (click)="onSwitchToLoginForm()">Already have an account?</a>
+    </div>
 </div>

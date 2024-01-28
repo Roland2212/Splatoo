@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AuthViewComponent {
     isRegisterForm: boolean = false;
+
+    onSwitchForm(isRegisterForm: boolean): void {
+        this.isRegisterForm = isRegisterForm;
+    }
 }

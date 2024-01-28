@@ -1,0 +1,76 @@
+@use 'variable';
+@use 'colors/primary';
+@use 'mixin';
+
+.sign-in-container,
+.sign-up-container {
+    width: 300px;
+
+    .sign-header {
+        color: variable.$white-color;
+        font-size: variable.$font-size-large;
+        margin-bottom: 1em;
+    }
+
+    mat-card {
+        background: rgba(255, 255, 255, 0.1);
+
+        mat-card-header {
+            color: variable.$white-color;
+        }
+
+        mat-card-content {
+            mat-form-field {
+                input {
+                    color: variable.$white-color;
+                }
+            }
+        }
+
+        mat-card-actions {
+            button {
+                color: variable.$white-color !important;
+            }
+        }
+    }
+
+    .change-form-link {
+        @include mixin.flex-center();
+
+        color: variable.$white-color;
+        margin-top: 1em;
+
+        a {
+            cursor: pointer;
+            font-size: variable.$font-size-small;
+            font-style: italic;
+            text-decoration: underline;
+
+            &:hover {
+                color: rgba(variable.$white-color, 0.8);
+            }
+        }
+    }
+
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__notch,
+    .mdc-notched-outline__trailing {
+        border-color: variable.$white-color !important;
+
+        mat-label {
+            color: variable.$white-color !important;
+        }
+    }
+
+    mat-icon {
+        color: variable.$white-color !important;
+    }
+
+    input {
+        color: variable.$white-color !important;
+    }
+
+    .mdc-floating-label--required {
+        color: variable.$white-color !important;
+    }
+}

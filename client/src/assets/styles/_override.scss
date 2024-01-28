@@ -1,0 +1,11 @@
+mat-form-field {
+    mat-icon.mat-icon {
+        width: 19px;
+        height: 19px;
+        font-size: 19px;
+    }
+    .mat-mdc-form-field-icon-prefix > .mat-icon,
+    .mat-mdc-form-field-icon-suffix > .mat-icon {
+        padding: 0 16px;
+    }
+}
