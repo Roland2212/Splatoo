@@ -1,0 +1,66 @@
+<div class="navigation-container">
+    <mat-toolbar>
+        <div class="app-name">
+            <h1>Splatoo</h1>
+        </div>
+        <div class="actions">
+            <div class="navigation">
+                @for (item of navigationItems; track $index) {
+                    <a
+                        class="navigation-item"
+                        routerLinkActive="active">
+                        <button
+                            color="primary"
+                            mat-button
+                            [routerLink]="item.path">
+                            <mat-icon>{{ item.icon }}</mat-icon>
+                            <span>{{ item.labelKey | translate }}</span>
+                        </button>
+                    </a>
+                }
+            </div>
+            <div class="main">
+                <button
+                    color="primary"
+                    mat-icon-button
+                    (click)="onOpenSettingsDialog()">
+                    <mat-icon>tune</mat-icon>
+                </button>
+                <button
+                    color="primary"
+                    mat-icon-button
+                    (click)="onSignOut()">
+                    <mat-icon>logout</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-toolbar>
+    <!-- <mat-toolbar *ngIf="isMobileLayout$ | async | isFalse"
+    </mat-toolbar>
+
+    <mat-toolbar *ngIf="isMobileLayout$ | async">
+        <div class="navigation-mobile">
+            <div class="actions">
+                <div class="main">
+                    <button
+                        mat-icon-button
+                        (click)="onToggleSideNavigation()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+                <div class="settings">
+                    <button
+                        mat-icon-button
+                        (click)="onOpenSettingsDialog()">
+                        <mat-icon>tune</mat-icon>
+                    </button>
+                    <button
+                        mat-icon-button
+                        (click)="onSignOut()">
+                        <mat-icon>logout</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-toolbar> -->
+</div>

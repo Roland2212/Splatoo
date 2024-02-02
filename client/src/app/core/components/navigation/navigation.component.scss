@@ -1,0 +1,88 @@
+@use 'variable';
+@use 'mixin';
+
+.navigation-container {
+    mat-toolbar {
+        @include mixin.flex-space-between-h();
+        @include mixin.full-height-width();
+
+        margin: 0.5em 0;
+
+        background-color: variable.$base-color;
+
+        .app-name {
+            color: variable.$primary-color-500;
+            font-size: variable.$font-size-large;
+
+            h1 {
+                font-style: italic;
+            }
+        }
+
+        .actions {
+            @include mixin.flex-row();
+
+            .navigation {
+                .navigation-item {
+                    margin-right: 0.5em;
+
+                    &.active {
+                        button {
+                            background-color: variable.$primary-color-500;
+                            color: variable.$white-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .navigation-container {
+//     mat-toolbar {
+//         display: flex;
+//         justify-content: space-between;
+
+//         background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(87, 152, 13, 0.2) 70%);
+
+//         .navigation,
+//         .navigation-mobile {
+//             width: 100%;
+
+//             .actions {
+//                 display: flex;
+//                 align-items: center;
+//             }
+//         }
+
+//         .navigation {
+//             display: flex;
+//             justify-content: space-between;
+
+//             .title {
+//                 display: flex;
+//                 align-items: center;
+
+//                 color: rgba(0, 0, 0, 0.87);
+//             }
+
+//             .navigation-item {
+//                 margin-right: 0.5em;
+
+//                 &.active {
+//                     button {
+//                         background-color: variables.$accent-color;
+//                         color: variables.$white-color;
+//                     }
+//                 }
+//             }
+//         }
+
+//         .navigation-mobile {
+//             .actions {
+//                 display: flex;
+//                 justify-content: space-between;
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,33 @@
+@use 'mixin';
+@use 'variable';
+
+:host {
+    @include mixin.full-height-width();
+
+    .side-navigation-container {
+        @include mixin.full-height-width();
+
+        .side-navigation {
+            @include mixin.full-height-width();
+
+            background-color: variable.$white-color;
+
+            .mat-drawer {
+                width: 300px;
+
+                .navigation-item {
+                    &.active {
+                        // TODO: Add active colors
+                        // background-color: variables.$accent-color;
+                    }
+                }
+            }
+
+            .drawer-content {
+                @include mixin.flex-column();
+                align-items: center;
+                background-color: variable.$base-color;
+            }
+        }
+    }
+}

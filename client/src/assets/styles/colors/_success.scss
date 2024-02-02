@@ -1,5 +1,4 @@
 @use '@angular/material' as mat;
-@use 'variable';
 
 $success-map: (
     50: #e9f9f0,
@@ -13,16 +12,16 @@ $success-map: (
     800: #2eb868,
     900: #1fac55,
     contrast: (
-        50: variable.$text-color,
-        100: variable.$text-color,
-        200: variable.$text-color,
-        300: variable.$text-color,
-        400: variable.$text-color,
-        500: variable.$white-color,
-        600: variable.$white-color,
-        700: variable.$white-color,
-        800: variable.$white-color,
-        900: variable.$white-color,
+        50: #3d3b40,
+        100: #3d3b40,
+        200: #3d3b40,
+        300: #3d3b40,
+        400: #3d3b40,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
     ),
 );
 

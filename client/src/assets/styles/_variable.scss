@@ -1,5 +1,12 @@
 @use '@angular/material' as mat;
 
+@forward 'colors/primary';
+@forward 'colors/accent';
+@forward 'colors/warn';
+@forward 'colors/secondary';
+@forward 'colors/error';
+@forward 'colors/success';
+
 // Colors
 $base-color: #eef5ff;
 $text-color: #3d3b40;
@@ -10,3 +17,10 @@ $disable-color: #0000001f;
 $font-size-large: 20px;
 $font-size-medium: 16px;
 $font-size-small: 12px;
+
+// Size
+$mobile-width: 600px;
+$tablet-width: 1280px;
+$mobile-container-width: 100%;
+$tablet-container-width: 600px;
+$desktop-container-width: 720px;

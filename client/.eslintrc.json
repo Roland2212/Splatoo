@@ -16,7 +16,12 @@
       ],
       "rules": {
         "@typescript-eslint/no-explicit-any": "error",
-        "@typescript-eslint/unbound-method": ["error", { "ignoreStatic": true }],
+        "@typescript-eslint/unbound-method": [
+          "error",
+          {
+            "ignoreStatic": true
+          }
+        ],
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -38,7 +43,7 @@
         "complexity": ["error", 3],
         "max-depth": ["error", 3],
         "max-nested-callbacks": ["error", 3],
-        "max-params": ["error", 1],
+        "max-params": ["error", 3],
         "curly": "error",
         "eqeqeq": "error",
         "multiline-comment-style": "error",
@@ -48,7 +53,12 @@
         "no-console": "error",
         "no-else-return": "error",
         "no-empty": "error",
-        "no-empty-function": ["error", { "allow": ["constructors"] }],
+        "no-empty-function": [
+          "error",
+          {
+            "allow": ["constructors"]
+          }
+        ],
         "no-extra-boolean-cast": "error",
         "no-extra-semi": "error",
         "no-floating-decimal": "error",
@@ -63,9 +73,20 @@
         "no-useless-rename": "error",
         "no-useless-return": "error",
         "prefer-template": "error",
-        "array-bracket-newline": ["error", { "multiline": true }],
+        "array-bracket-newline": [
+          "error",
+          {
+            "multiline": true
+          }
+        ],
         "array-element-newline": ["error", "consistent"],
-        "array-bracket-spacing": ["error", "never", { "objectsInArrays": false }],
+        "array-bracket-spacing": [
+          "error",
+          "never",
+          {
+            "objectsInArrays": false
+          }
+        ],
         "arrow-parens": ["error", "as-needed"],
         "arrow-spacing": "error",
         "block-spacing": "error",
@@ -75,7 +96,13 @@
         "computed-property-spacing": "error",
         "function-call-argument-newline": ["error", "consistent"],
         "linebreak-style": ["error", "unix"],
-        "lines-around-comment": ["error", { "beforeBlockComment": true, "afterBlockComment": false }],
+        "lines-around-comment": [
+          "error",
+          {
+            "beforeBlockComment": true,
+            "afterBlockComment": false
+          }
+        ],
         "max-len": [
           "error",
           {

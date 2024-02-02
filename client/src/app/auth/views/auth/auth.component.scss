@@ -1,11 +1,23 @@
 @use 'variable';
 @use 'mixin';
-@use 'colors/accent';
-@use 'colors/primary';
 
 .auth-container {
-    @include mixin.flex-center();
+    @include mixin.flex-center-center();
 
-    background: accent.$accent-color-500;
-    background: linear-gradient(135deg, accent.$accent-color-500 0%, primary.$primary-color-500 100%);
+    background: variable.$accent-color-500;
+    background: linear-gradient(135deg, variable.$accent-color-500 0%, variable.$primary-color-500 100%);
+
+    .copyright {
+        position: absolute;
+        bottom: 0;
+
+        @include mixin.flex-center-center();
+        padding: 1em;
+
+        color: variable.$white-color;
+
+        mat-icon {
+            margin-right: 0.25em;
+        }
+    }
 }

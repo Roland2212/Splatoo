@@ -1,0 +1,26 @@
+@use 'mixin';
+@use 'media';
+@use 'variable';
+
+.container {
+    @include mixin.flex-column();
+    @include mixin.full-height-width();
+}
+
+@include media.mobile {
+    .container {
+        width: variable.$mobile-container-width;
+    }
+}
+
+@include media.tablet {
+    .container {
+        width: variable.$tablet-container-width;
+    }
+}
+
+@include media.desktop {
+    .container {
+        width: variable.$desktop-container-width;
+    }
+}

@@ -10,6 +10,23 @@ const ROUTES: Routes = [
             });
         },
     },
+    {
+        path: '',
+        loadChildren: () => {
+            return import('@core/modules/core.module').then(m => {
+                return m.CoreModule;
+            });
+        },
+        canActivate: [
+            () => {
+                return true;
+            },
+        ],
+    },
+    {
+        path: '**',
+        redirectTo: '',
+    },
 ];
 
 @NgModule({

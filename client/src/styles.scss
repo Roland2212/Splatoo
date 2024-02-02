@@ -8,6 +8,7 @@
 @use 'core/form';
 
 @use 'modules/auth';
+@use 'modules/core';
 
 body {
     background: variable.$base-color;

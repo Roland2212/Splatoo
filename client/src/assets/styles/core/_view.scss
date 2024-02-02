@@ -1,6 +1,6 @@
 @use 'mixin';
+@use 'variable';
 
 .view {
-    @include mixin.flex-column();
     @include mixin.full-height-width();
 }

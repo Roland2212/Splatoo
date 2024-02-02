@@ -23,5 +23,11 @@
         "up": "Do not have an account?"
       }
     }
+  },
+  "CORE": {},
+  "ESTIMATION": {
+    "text": {
+      "estimation": "Estimation"
+    }
   }
 }

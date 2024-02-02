@@ -38,7 +38,7 @@
     }
 
     .change-form-link {
-        @include mixin.flex-center();
+        @include mixin.flex-center-center();
 
         color: variable.$white-color;
         margin-top: 1em;
