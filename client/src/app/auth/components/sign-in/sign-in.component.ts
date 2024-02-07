@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@auth/services/auth.service';
+import { Store } from '@ngrx/store';
 import { SharedSubscriptionDirective } from '@shared/directives/subscription.directive';
+import { AuthState } from '@store/reducers/auth.reducer';
+import * as AuthActions from '@store/actions/auth.action';
 
 interface SignInForm {
     email: AbstractControl<string>;
@@ -30,7 +32,7 @@ export class SignInComponent extends SharedSubscriptionDirective {
         password: this.passwordControl,
     });
 
-    constructor(private authService: AuthService) {
+    constructor(private store: Store<AuthState>) {
         super();
     }
 
@@ -44,8 +46,6 @@ export class SignInComponent extends SharedSubscriptionDirective {
             return;
         }
 
-        console.log(this.form.getRawValue());
-
-        this.subscription(this.authService.signIn(this.form.getRawValue()).pipe().subscribe());
+        this.store.dispatch(AuthActions.signIn(this.form.getRawValue()));
     }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuardFn } from '@auth/guards/auth.guard';
 
 const ROUTES: Routes = [
     {
@@ -17,15 +18,11 @@ const ROUTES: Routes = [
                 return m.CoreModule;
             });
         },
-        canActivate: [
-            () => {
-                return true;
-            },
-        ],
+        canActivate: [authGuardFn],
     },
     {
         path: '**',
-        redirectTo: '',
+        redirectTo: 'auth',
     },
 ];
 

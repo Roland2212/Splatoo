@@ -43,7 +43,7 @@
         "complexity": ["error", 3],
         "max-depth": ["error", 3],
         "max-nested-callbacks": ["error", 3],
-        "max-params": ["error", 3],
+        "max-params": ["error", 7],
         "curly": "error",
         "eqeqeq": "error",
         "multiline-comment-style": "error",
@@ -124,7 +124,16 @@
         "semi-spacing": "error",
         "space-before-blocks": "error",
         "space-before-function-paren": ["error", "never"],
-        "switch-colon-spacing": "error"
+        "switch-colon-spacing": "error",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+          }
+        ]
       }
     },
     {

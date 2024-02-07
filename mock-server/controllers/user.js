@@ -10,21 +10,17 @@ export const signin = (request, response) => {
     return user.email === email;
   });
 
-  if (!user) {
-    setTimeout(() => {
-      return response.status(404).json({ message: "User doesn`t exist." });
-    }, 1000);
-  }
-
-  if (user?.password !== password) {
-    setTimeout(() => {
-      return response.status(400).json({ message: "Invalid credential." });
-    }, 1000);
-  }
-
-  const token = uuidv4();
-
   setTimeout(() => {
+    if (!user) {
+      return response.status(404).json({ message: "User doesn`t exist." });
+    }
+
+    if (user?.password !== password) {
+      return response.status(400).json({ message: "Invalid credential." });
+    }
+
+    const token = uuidv4();
+
     response.status(200).json({ user, token });
   }, 1000);
 };
@@ -37,15 +33,11 @@ export const signup = (request, response) => {
   });
 
   if (user) {
-    setTimeout(() => {
-      return response.status(400).json({ message: "User already exist." });
-    }, 1000);
+    return response.status(400).json({ code: 400, message: "User already exist." });
   }
 
   if (password !== confirmedPassword) {
-    setTimeout(() => {
-      return response.status(400).json({ message: "Passwords not match." });
-    }, 1000);
+    return response.status(400).json({ code: 400, message: "Passwords not match." });
   }
 
   const newUser = {
@@ -61,6 +53,6 @@ export const signup = (request, response) => {
   users.push(newUser);
 
   setTimeout(() => {
-    response.status(200).json({ user: newUser, token });
+    response.status(200).json({ code: 200, user: newUser, token });
   }, 1000);
 };

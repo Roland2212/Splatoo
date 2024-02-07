@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { AuthResponse } from '@auth/interfaces/auth.interface';
 import { User } from '@auth/interfaces/user.interface';
 import { API_URL_TOKEN } from '@core/tokens/api-url.token';
 import { Observable } from 'rxjs';
@@ -11,8 +12,8 @@ export class AuthService {
         private http: HttpClient,
     ) {}
 
-    signIn(credentials: Pick<User, 'email' | 'password'>): Observable<{ user: User; token: string }> {
-        return this.http.post<{ user: User; token: string }>(`${this.API_URL}/user/signin`, { ...credentials }, {});
+    signIn(credentials: Pick<User, 'email' | 'password'>): Observable<AuthResponse> {
+        return this.http.post<AuthResponse>(`${this.API_URL}/user/signin`, { ...credentials });
     }
 
     signUp(user: Omit<User, 'id'>): Observable<{ user: User; token: string }> {

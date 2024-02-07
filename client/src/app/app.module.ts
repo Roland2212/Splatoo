@@ -16,6 +16,8 @@ import { entityConfig } from './entity-metadata';
 import { API_URL_TOKEN } from '@core/tokens/api-url.token';
 import { environment } from '@environments/environment';
 import { CoreModule } from '@core/modules/core.module';
+import { appReducers } from './app.reducer';
+import { AuthEffect } from '@store/effects/auth.effect';
 
 export function HttpTranslateLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -38,18 +40,15 @@ export function HttpTranslateLoaderFactory(http: HttpClient) {
                 deps: [HttpClient],
             },
         }),
-        StoreModule.forRoot(
-            {},
-            {
-                runtimeChecks: {
-                    strictStateImmutability: true,
-                    strictStateSerializability: true,
-                    strictActionImmutability: true,
-                    strictActionSerializability: true,
-                },
+        StoreModule.forRoot(appReducers, {
+            runtimeChecks: {
+                strictStateImmutability: true,
+                strictStateSerializability: true,
+                strictActionImmutability: true,
+                strictActionSerializability: true,
             },
-        ),
-        EffectsModule.forRoot([]),
+        }),
+        EffectsModule.forRoot([AuthEffect]),
         StoreRouterConnectingModule.forRoot(),
         EntityDataModule.forRoot(entityConfig),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
