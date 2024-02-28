@@ -1,3 +1,3 @@
 export interface SharedHttpError {
-    message: string;
+    messageKey: string;
 }

@@ -1,0 +1,1 @@
+export const CORE_SNACKBAR_DURATION = 5000;

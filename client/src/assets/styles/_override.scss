@@ -1,3 +1,5 @@
+@use 'variable';
+
 mat-form-field {
     .mat-mdc-form-field-icon-prefix > .mat-icon,
     .mat-mdc-form-field-icon-suffix > .mat-icon {
@@ -5,8 +7,67 @@ mat-form-field {
     }
 }
 
+// mat-icon
 mat-icon.mat-icon {
     width: 19px;
     height: 19px;
     font-size: 19px;
+}
+
+// mat-snackbar
+mat-snack-bar-container.mat-mdc-snack-bar-container {
+    // TODO: Find way to use variables
+    --mdc-snackbar-container-color: #eef5ff;
+    --mdc-snackbar-supporting-text-color: #3d3b40;
+}
+
+mat-snack-bar-container.mat-mdc-snack-bar-container {
+    &.error,
+    &.success,
+    &.info {
+        .notification-container {
+            &::before {
+                content: '';
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                width: 0.5em;
+            }
+        }
+    }
+
+    &.error {
+        .notification-container {
+            &::before {
+                background-color: variable.$error-color-500;
+            }
+
+            .notification-icon {
+                color: variable.$error-color-500;
+            }
+        }
+    }
+
+    &.success {
+        .notification-container {
+            &::before {
+                background-color: variable.$success-color-500;
+            }
+
+            .notification-icon {
+                color: variable.$success-color-500;
+            }
+        }
+    }
+
+    &.info {
+        .notification-container {
+            &::before {
+                background-color: variable.$accent-color-500;
+            }
+
+            .notification-icon {
+                color: variable.$accent-color-500;
+            }
+        }
+    }
 }

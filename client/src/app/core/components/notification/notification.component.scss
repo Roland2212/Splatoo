@@ -1,0 +1,15 @@
+@use 'variable';
+@use 'mixin';
+
+.notification-container {
+    @include mixin.flex-row();
+
+    .mdc-snackbar__label {
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+            margin-right: 0.5em;
+        }
+    }
+}

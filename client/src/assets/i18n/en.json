@@ -1,26 +1,27 @@
 {
   "COMMON": {
     "text": {
-      "name": {
-        "first": "First name",
-        "last": "Last name"
-      },
+      "first_name": "First name",
+      "last_name": "Last name",
       "email": "Email",
-      "password": {
-        "default": "Password",
-        "confirm": "Confirm password"
-      }
+      "password": "Password",
+      "confirm_password": "Confirm password"
     }
   },
   "AUTH": {
     "text": {
-      "sign": {
-        "in": "Sign in",
-        "up": "Sign up"
-      },
-      "link": {
-        "in": "Already have an account?",
-        "up": "Do not have an account?"
+      "sign_in": "Sign in",
+      "sign_up": "Sign up",
+      "link_in": "Already have an account?",
+      "link_up": "Do not have an account?",
+      "does_not_exist": "User doesn`t exist!",
+      "invalid_credential": "Invalid credential!"
+    },
+    "message": {
+      "sign_in": {
+        "loading": "Signing in...",
+        "success": "Successfully signed in!",
+        "error": "Error occurred while signing in!"
       }
     }
   },

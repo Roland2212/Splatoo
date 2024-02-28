@@ -1,33 +1,44 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CoreNotificationService } from '@core/services/notification.service';
+import { SharedHttpError } from '@shared/interfaces/http-error.interface';
 import { SharedRequestHeader } from '@shared/interfaces/request-header.interface';
 import { Observable, catchError, finalize } from 'rxjs';
 
-// TODO: Remove console.log
-
 @Injectable()
 export class CoreNotificationInterceptor implements HttpInterceptor {
-    constructor() {}
+    constructor(private notificationService: CoreNotificationService) {}
 
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-        const successMessageKey = request.headers.get(SharedRequestHeader.SUCCESS_MESSAGE) || '';
-        const errorMessageKey = request.headers.get(SharedRequestHeader.ERROR_MESSAGE) || '';
+        const headerSuccessMessageKey = request.headers.get(SharedRequestHeader.SUCCESS_MESSAGE) || '';
+        const headerErrorMessageKey = request.headers.get(SharedRequestHeader.ERROR_MESSAGE) || '';
         let isError = false;
 
         return next.handle(request).pipe(
-            catchError(error => {
+            catchError((response: HttpErrorResponse) => {
+                const { messageKey } = response?.error as SharedHttpError;
                 isError = true;
 
-                if (errorMessageKey) {
-                    console.log(errorMessageKey);
-                }
-                throw error;
+                this._showErrorMessage(messageKey, headerErrorMessageKey);
+
+                throw response;
             }),
             finalize(() => {
-                if (!isError && successMessageKey) {
-                    console.log(successMessageKey);
+                if (!isError && headerSuccessMessageKey) {
+                    this.notificationService.showSuccessNotification(headerSuccessMessageKey);
                 }
             }),
         );
+    }
+
+    private _showErrorMessage(errorMessageKey: string, headerErrorMessageKey: string): void {
+        if (errorMessageKey) {
+            this.notificationService.showErrorNotification(errorMessageKey);
+            return;
+        }
+
+        if (headerErrorMessageKey) {
+            this.notificationService.showErrorNotification(headerErrorMessageKey);
+        }
     }
 }

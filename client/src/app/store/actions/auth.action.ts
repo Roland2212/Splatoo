@@ -1,10 +1,9 @@
-import { User } from '@auth/interfaces/user.interface';
+import { AuthErrorResponse, AuthResponse, Credentials } from '@auth/interfaces/auth.interface';
 import { createAction, props } from '@ngrx/store';
-import { SharedHttpError } from '@shared/interfaces/http-error.interface';
 
-export const signIn = createAction('[AUTH] sign in', props<{ email: string; password: string }>());
-export const signInSuccess = createAction('[AUTH] sign in success', props<{ user: User; token: string }>());
-export const signInFailure = createAction('[AUTH] sign in failure', props<{ error: SharedHttpError }>());
+export const signIn = createAction('[AUTH] sign in', props<Credentials>());
+export const signInSuccess = createAction('[AUTH] sign in success', props<AuthResponse>());
+export const signInFailure = createAction('[AUTH] sign in failure', props<AuthErrorResponse>());
 
 // export const signUp = createAction('[AUTH] sign up', props());
 

@@ -7,6 +7,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const MATERIAL_MODULES = [
     MatInputModule,
@@ -17,6 +18,7 @@ const MATERIAL_MODULES = [
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    MatSnackBarModule,
 ];
 
 @NgModule({

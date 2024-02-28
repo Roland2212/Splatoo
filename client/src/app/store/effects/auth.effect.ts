@@ -1,10 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '@auth/interfaces/user.interface';
+import { AuthErrorResponse } from '@auth/interfaces/auth.interface';
 import { AuthService } from '@auth/services/auth.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { SharedHttpError } from '@shared/interfaces/http-error.interface';
 import * as AuthActions from '@store/actions/auth.action';
 import { catchError, exhaustMap, map, of } from 'rxjs';
 
@@ -17,11 +16,11 @@ export class AuthEffect {
                 return this.authService.signIn(credentials).pipe(
                     map(response => {
                         void this.router.navigate([''], { relativeTo: this.route });
-                        return AuthActions.signInSuccess(response as { user: User; token: string });
+                        return AuthActions.signInSuccess(response);
                     }),
-                    catchError((errorResponse: HttpErrorResponse) => {
-                        const error = errorResponse.error as SharedHttpError;
-                        return of(AuthActions.signInFailure({ error }));
+                    catchError((response: HttpErrorResponse) => {
+                        const error = response?.error as AuthErrorResponse;
+                        return of(AuthActions.signInFailure(error));
                     }),
                 );
             }),

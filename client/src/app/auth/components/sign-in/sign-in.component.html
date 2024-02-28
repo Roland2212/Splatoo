@@ -4,7 +4,7 @@
     </div>
     <mat-card>
         <mat-card-header>
-            <h3>{{ 'AUTH.text.sign.in' | translate }}</h3>
+            <h3>{{ 'AUTH.text.sign_in' | translate }}</h3>
         </mat-card-header>
         <mat-card-content>
             <form
@@ -19,7 +19,7 @@
                 <app-shared-input
                     classes="field"
                     [control]="passwordControl"
-                    [label]="'COMMON.text.password.default' | translate"
+                    [label]="'COMMON.text.password' | translate"
                     type="password"
                     prefixIcon="vpn_key">
                 </app-shared-input>
@@ -30,7 +30,7 @@
                 mat-button
                 (click)="onSignIn()">
                 <mat-icon>login</mat-icon>
-                {{ 'AUTH.text.sign.in' | translate }}
+                {{ 'AUTH.text.sign_in' | translate }}
             </button>
         </mat-card-actions>
     </mat-card>
@@ -38,7 +38,7 @@
         <a
             matRipple
             (click)="onSwitchToRegisterForm()">
-            {{ 'AUTH.text.link.up' | translate }}
+            {{ 'AUTH.text.link_up' | translate }}
         </a>
     </div>
 </div>

@@ -1,0 +1,14 @@
+<div class="notification-container">
+    <div matSnackBarLabel>
+        <mat-icon class="notification-icon">{{ icon }}</mat-icon>
+        <span>{{ messageKey | translate }}</span>
+    </div>
+    <span matSnackBarActions>
+        <button
+            mat-icon-button
+            matSnackBarAction
+            (click)="onDismiss()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</div>

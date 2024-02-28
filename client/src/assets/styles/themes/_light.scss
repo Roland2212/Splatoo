@@ -72,7 +72,7 @@
     @include mat.toolbar-theme($light-theme-xs);
     // @include mat.tooltip-theme($light-theme-m);
     // @include mat.tree-theme($light-theme-m);
-    // @include mat.snack-bar-theme($light-theme-m);
+    @include mat.snack-bar-theme($light-theme-xs);
     // @include mat.all-component-themes($light-theme-s);
     // @include mat.all-component-colors($light-theme-m);
 }

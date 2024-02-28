@@ -12,11 +12,11 @@ export const signin = (request, response) => {
 
   setTimeout(() => {
     if (!user) {
-      return response.status(404).json({ message: "User doesn`t exist." });
+      return response.status(404).json({ messageKey: "AUTH.text.does_not_exist" });
     }
 
     if (user?.password !== password) {
-      return response.status(400).json({ message: "Invalid credential." });
+      return response.status(400).json({ messageKey: "AUTH.text.invalid_credential" });
     }
 
     const token = uuidv4();

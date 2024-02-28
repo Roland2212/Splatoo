@@ -1,14 +1,35 @@
 @use 'variable';
 @use 'colors/primary';
 @use 'mixin';
+@use 'media';
+
+@include media.mobile {
+    .sign-in-container,
+    .sign-up-container {
+        width: 100%;
+    }
+}
+
+@include media.tablet  {
+    .sign-in-container,
+    .sign-up-container {
+        width: 320px;
+    }
+}
+
+@include media.desktop {
+    .sign-in-container,
+    .sign-up-container {
+        width: 320px;
+    }
+}
 
 .sign-in-container,
 .sign-up-container {
-    width: 300px;
-
     .app-name {
         color: variable.$white-color;
         font-size: variable.$font-size-large;
+        margin-left: 0.5em;
 
         h1 {
             font-style: italic;

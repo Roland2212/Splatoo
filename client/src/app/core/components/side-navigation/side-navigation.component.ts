@@ -8,7 +8,7 @@ import { SharedSubscriptionDirective } from '@shared/directives/subscription.dir
 @Component({
     selector: 'app-core-side-navigation',
     templateUrl: './side-navigation.component.html',
-    styleUrls: ['./side-navigation.component.scss'],
+    styleUrl: './side-navigation.component.scss',
 })
 export class CoreSideNavigationComponent extends SharedSubscriptionDirective implements AfterViewInit {
     @ViewChild('drawer') public sideNavigationRef!: MatSidenav;

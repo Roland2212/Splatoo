@@ -16,7 +16,7 @@ import { NAVIGATION_ITEMS } from '@core/routes/routes';
 @Component({
     selector: 'app-core-navigation',
     templateUrl: './navigation.component.html',
-    styleUrls: ['./navigation.component.scss'],
+    styleUrl: './navigation.component.scss',
 })
 export class CoreNavigationComponent {
     navigationItems: NavigationItem[] = NAVIGATION_ITEMS;
