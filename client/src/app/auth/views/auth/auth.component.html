@@ -1,4 +1,11 @@
 <div class="auth-container view">
+    <button
+        class="language-button"
+        mat-button
+        [matMenuTriggerFor]="languageMenu">
+        <span [class]="'fi fi-' + languagesFlagsMap.get(currentLanguage)"></span>
+        <span>{{ currentLanguage }}</span>
+    </button>
     @if (!isRegisterForm) {
         <app-sign-in
             @appear
@@ -12,3 +19,16 @@
     }
     <div class="copyright"><mat-icon>copyright</mat-icon> Powered by MAD_Roland</div>
 </div>
+
+<mat-menu
+    #languageMenu
+    class="language-menu">
+    @for (language of applicationLanguages; track language) {
+        <button
+            mat-menu-item
+            (click)="onSelectLanguage(language)">
+            <span [class]="'flag-icon fi fi-' + languagesFlagsMap.get(language)"></span>
+            <span>{{ language }}</span>
+        </button>
+    }
+</mat-menu>

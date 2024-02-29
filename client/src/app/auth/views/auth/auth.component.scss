@@ -7,6 +7,21 @@
     background: variable.$accent-color-500;
     background: linear-gradient(135deg, variable.$accent-color-500 0%, variable.$primary-color-500 100%);
 
+    .language-button {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+
+        color: variable.$white-color;
+        text-transform: capitalize;
+        font-weight: 100;
+
+        .fi {
+            margin-right: 0.5em;
+            border-radius: 2px;
+        }
+    }
+
     .copyright {
         position: absolute;
         bottom: 0;

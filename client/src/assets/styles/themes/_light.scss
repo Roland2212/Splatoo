@@ -57,7 +57,7 @@
     @include mat.icon-theme($light-theme-xs);
     @include mat.input-theme($light-theme-xs);
     @include mat.list-theme($light-theme-xs);
-    // @include mat.menu-theme($light-theme-m);
+    @include mat.menu-theme($light-theme-xs);
     // @include mat.paginator-theme($light-theme-m);
     // @include mat.progress-bar-theme($light-theme-m);
     // @include mat.progress-spinner-theme($light-theme-m);

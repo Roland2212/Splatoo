@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Languages } from '@core/interfaces/languages.interface';
+import { CORE_LANGUAGES } from '@core/constants/languages.constant';
+import { Language } from '@core/interfaces/languages.interface';
 import { LayoutTypes } from '@core/interfaces/layout.interface';
 import { CoreLayoutService } from '@core/services/layout.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,8 +28,8 @@ export class AppComponent extends SharedSubscriptionDirective {
     }
 
     private _getSavedLanguage(): void {
-        const savedLanguage = localStorage.getItem('language') || Languages.EN;
-        this.translateService.addLangs([Languages.EN, Languages.UA]);
+        const savedLanguage = localStorage.getItem('language') || Language.EN;
+        this.translateService.addLangs(CORE_LANGUAGES);
         this.translateService.use(savedLanguage);
     }
 }

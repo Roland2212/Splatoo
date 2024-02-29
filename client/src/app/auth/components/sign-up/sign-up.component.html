@@ -4,7 +4,7 @@
     </div>
     <mat-card>
         <mat-card-header>
-            <h3>{{ 'AUTH.text.sign.up' | translate }}</h3>
+            <h3>{{ 'AUTH.text.sign_up' | translate }}</h3>
         </mat-card-header>
         <mat-card-content>
             <form
@@ -13,13 +13,13 @@
                 <app-shared-input
                     classes="field"
                     [control]="firstNameControl"
-                    [label]="'COMMON.text.name.first' | translate"
+                    [label]="'COMMON.text.first_name' | translate"
                     prefixIcon="badge">
                 </app-shared-input>
                 <app-shared-input
                     classes="field"
                     [control]="lastNameControl"
-                    [label]="'COMMON.text.name.last' | translate"
+                    [label]="'COMMON.text.last_name' | translate"
                     prefixIcon="badge">
                 </app-shared-input>
                 <app-shared-input
@@ -31,14 +31,14 @@
                 <app-shared-input
                     classes="field"
                     [control]="passwordControl"
-                    [label]="'COMMON.text.password.default' | translate"
+                    [label]="'COMMON.text.password' | translate"
                     type="password"
                     prefixIcon="vpn_key">
                 </app-shared-input>
                 <app-shared-input
                     classes="field"
                     [control]="confirmPasswordControl"
-                    [label]="'COMMON.text.password.confirm' | translate"
+                    [label]="'COMMON.text.confirm_password' | translate"
                     type="password"
                     prefixIcon="vpn_key">
                 </app-shared-input>
@@ -49,7 +49,7 @@
                 mat-button
                 (click)="onSignUp()">
                 <mat-icon>login</mat-icon>
-                {{ 'AUTH.text.sign.up' | translate }}
+                {{ 'AUTH.text.sign_up' | translate }}
             </button>
         </mat-card-actions>
     </mat-card>
@@ -57,7 +57,7 @@
         <a
             matRipple
             (click)="onSwitchToLoginForm()">
-            {{ 'AUTH.text.link.in' | translate }}
+            {{ 'AUTH.text.link_in' | translate }}
         </a>
     </div>
 </div>

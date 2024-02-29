@@ -71,3 +71,16 @@ mat-snack-bar-container.mat-mdc-snack-bar-container {
         }
     }
 }
+
+.mat-mdc-menu-panel.language-menu {
+    .mat-mdc-menu-item-text {
+        color: variable.$text-color;
+        text-transform: capitalize;
+        font-weight: 100;
+    }
+
+    .fi {
+        margin-right: 0.5em;
+        border-radius: 2px;
+    }
+}
